@@ -9,6 +9,10 @@ findRandomNumber();
 howLongBeforeChristmas()
 multiplyOrDivide();
 fahrenheitOrCelsius(document.querySelectorAll(".celsiusAndFahrenheit input"));
+getURL();
+createUserVariable();
+getExtentionName();
+getDifference();
 
 function displayDateAndHour() {
     const dateElement = document.querySelector(".date-hour");
@@ -198,5 +202,52 @@ function fahrenheitOrCelsius(inputs) {
                 fahrenheit.value = resultat;
             }
         })
+    })
+}
+
+function getURL() {
+    let urlElt = document.getElementById("currentURL");
+    urlElt.textContent = "";
+    const currentURL = window.location.href;
+    urlElt.textContent = currentURL;
+}
+
+function createUserVariable() {
+    const inputElt = document.getElementById("variableName");
+    const submitBtn = document.querySelector(".createUserVariable button");
+
+    submitBtn.addEventListener("click", function (e) {
+        e.preventDefault
+        const n = inputElt.value;
+        const var_name = '';
+        this[var_name] = n;
+        document.getElementById("userVariableElt").textContent = this[var_name];
+    })
+}
+
+function getExtentionName() {
+    const file = document.getElementById("fileName");
+
+    file.addEventListener("change", function (e) {
+        const fileName = e.target.value;
+        const extentionName = fileName.split('.').pop();
+        const extentionNameElt = document.getElementById("extentionNameElt");
+        extentionNameElt.textContent = '.' + extentionName;
+    });
+}
+
+function getDifference() {
+    const input = document.getElementById("num");
+
+    input.addEventListener("change", function (e) {
+
+        const number = e.target.value;
+        let result = "";
+        if (number <= 13) {
+            result = 13 - number;
+        } else {
+            result = (13 - number) * -2
+        }
+        document.getElementById("numResult").textContent = result;
     })
 }
