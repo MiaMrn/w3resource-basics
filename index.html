@@ -39,6 +39,49 @@
             <input type="text" id="yearInput" placeholder="Ex: 2020">
             <p class="answer">Answer : </p>
         </div>
+
+        <div class="part januaryFirst">
+            <h2>7 - Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.</h2>
+        </div>
+
+
+        <div class="part findRandomNumber">
+            <h2>
+                8 - Write a JavaScript program where the program takes a random integer between 1 to 10, the user is
+                then prompted to input a guess number. If the user input matches with guess number, the program will
+                display a message "Good Work" otherwise display a message "Not matched".
+            </h2>
+            <button>Devinez un nombre</button>
+        </div>
+
+        <div class="part howLongBeforeChristmas">
+            <h2>9 - Write a JavaScript program to calculate days left until next Christmas.</h2>
+            <div class="christmasAnswer"></div>
+        </div>
+
+        <div class="part multiplyOrDivide">
+            <h2>
+                10 - Write a JavaScript program to calculate multiplication and division of two numbers.
+            </h2>
+            <label for="firstNumber">1st Number : </label>
+            <input type="text" id="firstNumber"><br>
+
+            <label for="secondNumber">2nd Number : </label>
+            <input type="text" id="secondNumber"><br>
+
+            <button id="multiply" data-operation="*">Miltiply</button>
+            <button id="divide" data-operation="/">Divide</button>
+            <p>The result is : <span id="resultElt"></span></p>
+        </div>
+
+        <div class="part celsiusAndFahrenheit">
+            <h2>
+                11 - Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.
+            </h2>
+
+            <span>Celisus </span><input type="text" id="celsius" data-degre="c"> <span> = </span>
+            <input type="text" id="fahrenheit" data-degre="f"><span> Fahrenheit</span>
+        </div>
     </div>
 
     <script src="app.js"></script>
