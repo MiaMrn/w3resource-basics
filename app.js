@@ -12,7 +12,9 @@ fahrenheitOrCelsius(document.querySelectorAll(".celsiusAndFahrenheit input"));
 getURL();
 createUserVariable();
 getExtentionName();
-getDifference();
+getDifference(document.getElementById("num13"), 13, 2, document.getElementById("numResult13"));
+sumOrMultiply();
+getDifference(document.getElementById("num19"), 19, 3, document.getElementById("numResult19"));
 
 function displayDateAndHour() {
     const dateElement = document.querySelector(".date-hour");
@@ -236,18 +238,33 @@ function getExtentionName() {
     });
 }
 
-function getDifference() {
-    const input = document.getElementById("num");
-
+function getDifference(input, int, multiplier, destination) {
     input.addEventListener("change", function (e) {
-
         const number = e.target.value;
         let result = "";
-        if (number <= 13) {
-            result = 13 - number;
+        if (number <= int) {
+            result = int - number;
         } else {
-            result = (13 - number) * -2
+            result = (int - number) * -multiplier;
         }
-        document.getElementById("numResult").textContent = result;
+        destination.textContent = result;
+    })
+}
+
+function sumOrMultiply() {
+    const btn = document.getElementById("calculate");
+    const resultElt = document.getElementById("sumResult");
+
+    btn.addEventListener("click", function () {
+        resultElt.textContent = "";
+        const firstNumber = parseInt(document.getElementById("first").value);
+        const secondNumber = parseInt(document.getElementById("second").value);
+        let result = null;
+        if (firstNumber === secondNumber) {
+            result = (firstNumber + secondNumber) * 3;
+        } else {
+            result = firstNumber + secondNumber;
+        }
+        resultElt.textContent = result;
     })
 }
